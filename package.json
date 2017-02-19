@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "sheetify": "6.0.1"
+  },
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "budo": "^9.4.7",
+    "watchify": "^3.9.0",
+    "yo-yo": "1.x",
+    "yo-yoify": "^3.5.0"
+  },
+  "peerDependencies": {
+    "yo-yo": "1.x"
+  },
+  "main": "dist/component.js",
+  "scripts": {
+    "watch": "budo main.js --live -- -t sheetify/transform",
+    "build": "browserify component.js -t yo-yoify -t sheetify/transform --exclude yo-yo --standalone dist -o dist/component.js"
+  }
+}
